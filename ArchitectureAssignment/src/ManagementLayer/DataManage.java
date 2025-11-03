@@ -26,9 +26,9 @@ public class DataManage{
 
 	public String ViewAllStudents() {
 		String allStu = "";
-		for(int i = 0; i <= V.Stulist.size(); i++) {
+		for(int i = 0; i < V.Stulist.size(); i++) {
 			
-			allStu += ViewStudent(V.Stulist.get(i).getId());
+			allStu += "\n====================================="+ViewStudent(V.Stulist.get(i).getId())+"\n=====================================";
 		}
 		return allStu;
 	}
