@@ -3,7 +3,6 @@ import ManagementLayer.*;
 import java.util.Scanner;
 public class ProgramRunner {
 public static void main(String args[]){
-    
     DataManage M = new DataManage();
     boolean Run = true;
     Scanner input = new Scanner(System.in);
@@ -47,15 +46,16 @@ public static void main(String args[]){
     int again = Integer.parseInt(againString);
     if (again == 1) {
         Run = true;
+        continue;
     }
     else if (again == 2){
         System.out.println("Thank you for using our application!");
         Run = false;
-        continue;
+        break;
     }
     else{
         Run = true;
-        break;
+        continue;
     }
     }
 }
