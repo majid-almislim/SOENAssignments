@@ -11,9 +11,8 @@ public static void main(String args[]){
     M.AddStudent("Ahmed", "IT", 2023);
     while (Run){
     System.out.println("hello, what would you like to do today?\n1-Add a new student \n2-View a student \n3-View All students\n4-Exit Application");
-    String choiceString = input.nextLine();
-    int choice = Integer.parseInt(choiceString);
-    if (choice == 1){
+    String choice = input.nextLine();
+    if (choice.charAt(0) == '1'){
         System.out.println("ID> ");
         String idString = input.nextLine();
         int id = Integer.parseInt(idString);
@@ -24,40 +23,43 @@ public static void main(String args[]){
         M.AddStudent(name, major, id);
 
     }
-    else if (choice == 2){
+    else if (choice.charAt(0) == '2'){
         System.out.println("ID> ");
         String idString = input.nextLine();
         int id = Integer.parseInt(idString);
         System.out.println(M.ViewStudent(id));
     }
-    else if (choice == 3){
+    else if (choice.charAt(0) == '3'){
         System.out.println(M.ViewAllStudents());
     }
-    else if (choice == 4){
+    else if (choice.charAt(0) == '4'){
         System.out.println("Thank you for using our application!");
         Run = false;
         break;
     }
     else{
         System.out.println("\ninvalid choice, pick again>");
+        continue;
     }
     System.out.println("would you like to perform another action?\n1-Yes\n2-No");
-    String againString = input.nextLine();
-    int again = Integer.parseInt(againString);
-    if (again == 1) {
+    String again = input.nextLine();
+    if (again.charAt(0) == '1') {
         Run = true;
         continue;
     }
-    else if (again == 2){
+    else if (again.charAt(0) == '2'){
         System.out.println("Thank you for using our application!");
         Run = false;
         break;
     }
     else{
-        Run = true;
-        continue;
+    	System.out.println("\ninvalid choice, reprinting menu...");
+    	Run = true;
+        
     }
+    
     }
+
     input.close();
 }
 }

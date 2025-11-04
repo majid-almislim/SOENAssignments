@@ -4,15 +4,11 @@ public class DataManage{
 	Repository V = new Repository();
 	public void AddStudent(String name, String major, int id) {
 		Student S = new Student(name, major, id);
-		V.Stulist.add(S);
+		V.repAdd(S);
 	}
 	public Student SearchStudent(int id) {
-		for(int i = 0; i <= V.Stulist.size(); i++) {
-			if (V.Stulist.get(i).getId() == id) {
-				return V.Stulist.get(i);
-			}
-		}
-		return null;
+		Student foundStu = V.repSearch(id);
+		return foundStu;
 	}
 	public String ViewStudent(int id) {
 		Student lStu = SearchStudent(id);
@@ -20,7 +16,7 @@ public class DataManage{
 			return "no student found matching that id";
 		}
 		else {
-			return "\nName: "+lStu.getName()+"\nMajor: "+lStu.getMajor()+"\nID: "+lStu.getId();
+			return "\n=====================================\nName: "+lStu.getName()+"\nMajor: "+lStu.getMajor()+"\nID: "+lStu.getId()+"\n=====================================";
 		}
 	}
 
