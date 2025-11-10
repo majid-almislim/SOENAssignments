@@ -19,7 +19,7 @@ public class DataManage{
 		String allStu = "";
 		for(int i = 0; i < V.Stulist.size(); i++) {
 			
-			allStu += "\n====================================="+ViewStudent(V.Stulist.get(i).getId())+"\n=====================================";
+			allStu += ViewStudent(V.Stulist.get(i).getId());
 		}
 		return allStu;
 	}
