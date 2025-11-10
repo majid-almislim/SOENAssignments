@@ -53,9 +53,8 @@ public static void main(String args[]){
         break;
     }
     else{
-    	System.out.println("\ninvalid choice, reprinting menu...");
-    	Run = true;
-        //this is a git test
+        System.out.println("\ninvalid choice, reprinting menu...");
+        Run = true;
         
     }
     

@@ -6,12 +6,8 @@ public class DataManage{
 		Student S = new Student(name, major, id);
 		V.repAdd(S);
 	}
-	public Student SearchStudent(int id) {
-		Student foundStu = V.repSearch(id);
-		return foundStu;
-	}
 	public String ViewStudent(int id) {
-		Student lStu = SearchStudent(id);
+		Student lStu = V.repSearch(id);
 		if(lStu == null) {
 			return "no student found matching that id";
 		}
@@ -19,7 +15,6 @@ public class DataManage{
 			return "\n=====================================\nName: "+lStu.getName()+"\nMajor: "+lStu.getMajor()+"\nID: "+lStu.getId()+"\n=====================================";
 		}
 	}
-
 	public String ViewAllStudents() {
 		String allStu = "";
 		for(int i = 0; i < V.Stulist.size(); i++) {
